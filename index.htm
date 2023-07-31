@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DrawApp</title>
+    <link rel="stylesheet" href="public/style/style.css" />
+    <link rel="stylesheet" href="public/style/all.min.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="options">
+        <div class="option">
+          <div class="slider">
+            <label for="width_range">Grid Width</label>
+            <input type="range" id="width_range" min="1" max="100" />
+            <span id="width_range_value">00</span>
+          </div>
+          <div class="slider">
+            <label for="heigth_range">Grid Heigth</label>
+            <input type="range" id="heigth_range" min="1" max="45" />
+            <span id="heigth_range_value">00</span>
+          </div>
+        </div>
+        <div class="option">
+          <button data-animation="bonus" id="submit_grid">Create Grid</button>
+          <button data-animation="bonus" id="clear_grid">Clear Grid</button>
+          <input id="color_input" type="color" />
+          <button data-animation="bonus" id="erase_grid">
+            Erase
+            <i class="fa-solid fa-eraser"></i>
+          </button>
+          <button data-animation="bonus" id="paint_grid">
+            paint
+            <i class="fa-solid fa-pen-fancy fa-rotate-90"></i>
+          </button>
+        </div>
+      </div>
+      <div class="container" id="elementToPrint"></div>
+      <div id="circle" class="circle"></div>
+    </div>
+    <button id="printButton">Print</button>
+
+    <script src="public/js/kinet.js"></script>
+    <script src="public/js/kinet.min.js"></script>
+    <script src="public/js/app.js"></script>
+  </body>
+</html>

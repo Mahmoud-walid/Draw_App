@@ -184,3 +184,16 @@ function saveContainerAsImage(container) {
     document.body.removeChild(link);
   });
 }
+
+const pixelChoose = document.querySelector("#pixelChoose");
+let pixel = false;
+
+pixelChoose.addEventListener("click", (event) => {
+  document.querySelectorAll(".gridCol").forEach((ele) => {
+    if (!pixel) {
+      ele.style.border = "none";
+    } else ele.style.border = "1px solid #ddd"
+  });
+  pixel = !pixel;
+  event.preventDefault();
+});

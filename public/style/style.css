@@ -102,10 +102,15 @@ input[type="color"]::-moz-color-swatch {
     transition: width 0.2s, height 0.2s, margin 0.2s;
 }
 
-#printButton{
+#pixelChoose,
+#saveButton {
     position: absolute;
     bottom: 10px;
     left: 10px;
     font-weight: 900;
     font-size: larger;
+}
+
+#pixelChoose {
+    left: 10em;
 }

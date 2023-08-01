@@ -167,18 +167,20 @@ window.onload = () => {
 container.addEventListener("mouseenter", hideCircle);
 container.addEventListener("mouseleave", showCircle);
 
-//The print
-const printButton = document.getElementById("printButton");
-const elementToPrint = document.getElementById("elementToPrint");
+//Download image
+const saveButton = document.getElementById("saveButton");
 
-printButton.addEventListener("click", function () {
-  printElement(elementToPrint);
+saveButton.addEventListener("click", function () {
+  saveContainerAsImage(container);
 });
 
-function printElement(element) {
-  const originalContents = document.body.innerHTML;
-  const tempElement = element.cloneNode(true);
-  document.body.innerHTML = tempElement.outerHTML;
-  window.print();
-  document.body.innerHTML = originalContents;
+function saveContainerAsImage(container) {
+  html2canvas(container).then(function (canvas) {
+    const link = document.createElement("a");
+    link.download = "drawapp.png";
+    link.href = canvas.toDataURL("image/png");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
 }

@@ -123,3 +123,32 @@ input[type="color"]::-moz-color-swatch {
 .fa-solid.fa-star {
     color: rgb(255, 145, 0);
 }
+
+.heart {
+    /* border: none; */
+    position: relative;
+    right: 10%;
+    width: 20px;
+    height: 20px;
+    padding: 6px 40px;
+    background-size: 2800% 100%;
+    background: url(https://cssanimation.rocks/images/posts/steps/heart.png) no-repeat;
+    background-position: 0 50%;
+    cursor: pointer;
+    animation: fave-heart 1s steps(28);
+}
+
+#starButton:hover .heart {
+    background-position: -2800px 50%;
+    transition: background 1s steps(28);
+}
+
+@keyframes fave-heart {
+    0% {
+        background-position: 0 50%;
+    }
+
+    100% {
+        background-position: -2800px 50%;
+    }
+}

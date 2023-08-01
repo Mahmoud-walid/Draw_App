@@ -102,6 +102,7 @@ input[type="color"]::-moz-color-swatch {
     transition: width 0.2s, height 0.2s, margin 0.2s;
 }
 
+#starButton,
 #pixelChoose,
 #saveButton {
     position: absolute;
@@ -113,4 +114,12 @@ input[type="color"]::-moz-color-swatch {
 
 #pixelChoose {
     left: 10em;
+}
+
+#starButton {
+    left: 15.3em;
+}
+
+.fa-solid.fa-star {
+    color: rgb(255, 145, 0);
 }

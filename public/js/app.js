@@ -150,12 +150,12 @@ paintBtn.addEventListener("click", () => {
 
 gridWidthBtn.addEventListener("input", () => {
   widthValue.innerHTML =
-    gridWidthBtn.value < 9 ? `0${gridWidthBtn.value}` : gridWidthBtn.value;
+    gridWidthBtn.value <= 9 ? `0${gridWidthBtn.value}` : gridWidthBtn.value;
 });
 
 gridHeightBtn.addEventListener("input", () => {
   heightValue.innerHTML =
-    gridHeightBtn.value < 9 ? `0${gridHeightBtn.value}` : gridHeightBtn.value;
+    gridHeightBtn.value <= 9 ? `0${gridHeightBtn.value}` : gridHeightBtn.value;
 });
 
 window.onload = () => {
@@ -192,8 +192,33 @@ pixelChoose.addEventListener("click", (event) => {
   document.querySelectorAll(".gridCol").forEach((ele) => {
     if (!pixel) {
       ele.style.border = "none";
-    } else ele.style.border = "1px solid #ddd"
+    } else ele.style.border = "1px solid #ddd";
   });
   pixel = !pixel;
   event.preventDefault();
+});
+
+// add star to GitHub
+document.getElementById("starButton").addEventListener("click", function () {
+  fetch("https://api.github.com/user/starred/Mahmoud-Walid/Draw_App", {
+    method: "PUT",
+    headers: {
+      Authorization: "Bearer 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",
+    },
+  })
+    .then((response) => {
+      if (response.status === 204) {
+        alert("تم وضع الستار بنجاح!");
+      } else if (response.status === 404) {
+        alert("الريبوزيتوري غير موجود على GitHub.");
+      } else if (response.status === 401) {
+        alert("غير مصرح لك بوضع الستار على الريبوزيتوري.");
+      } else {
+        alert("حدث خطأ ما.");
+      }
+    })
+    .catch((error) => {
+      alert("حدث خطأ ما.");
+      console.error(error);
+    });
 });

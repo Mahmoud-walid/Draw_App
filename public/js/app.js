@@ -167,6 +167,24 @@ window.onload = () => {
 container.addEventListener("mouseenter", hideCircle);
 container.addEventListener("mouseleave", showCircle);
 
+////
+container.addEventListener(
+  "mouseenter",
+  () => (appElement.style.backgroundColor = "#ffff")
+);
+container.addEventListener(
+  "mouseleave",
+  () => (appElement.style.backgroundColor = "#dadada")
+);
+appElement.addEventListener(
+  "mouseenter",
+  () => (appElement.style.backgroundColor = "#dadada")
+);
+appElement.addEventListener(
+  "mouseleave",
+  () => (appElement.style.backgroundColor = "#ffff")
+);
+
 //Download image
 const saveButton = document.getElementById("saveButton");
 

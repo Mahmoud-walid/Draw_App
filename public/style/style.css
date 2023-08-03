@@ -23,7 +23,12 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 80px #1111,
         0 0 50px #3333;
+    transition: 0.7s;
     overflow: hidden;
+}
+
+.app:hover {
+    background-color: #dadada;
 }
 
 label {

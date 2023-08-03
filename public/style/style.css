@@ -27,6 +27,12 @@ body {
     overflow: hidden;
 }
 
+.container {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
 .app:hover {
     background-color: #dadada;
 }

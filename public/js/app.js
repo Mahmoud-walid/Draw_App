@@ -132,7 +132,7 @@ eraseBtn.addEventListener("click", () => {
   erase = true;
   draw = false;
   if (erase) {
-    container.style.cursor = "url('/public/icon/eraser.png'), default";
+    container.style.cursor = "url('../public/icon/eraser.png'), default";
   } else {
     container.style.cursor = "default";
   }
@@ -142,7 +142,7 @@ paintBtn.addEventListener("click", () => {
   erase = false;
   draw = !draw;
   if (draw) {
-    container.style.cursor = "url('/public/icon/handwriting32.png'), default";
+    container.style.cursor = "url('../public/icon/handwriting32.png'), default";
   } else {
     container.style.cursor = "default";
   }
